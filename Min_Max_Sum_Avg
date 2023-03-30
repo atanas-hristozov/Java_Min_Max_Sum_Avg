@@ -1,0 +1,29 @@
+import java.util.Scanner;
+import java.util.SimpleTimeZone;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Insert number of numbers:");
+        String input = scanner.nextLine();
+        int n = Integer.parseInt(input);
+        double min = 10000;
+        double max = -10000;
+        double sum = 0;
+        double avg = 0;
+        for (int i = 1; i <=n; i++) {
+            System.out.println("Add the value of " + i + " number");
+            String input1 = scanner.nextLine();
+            double k = Double.parseDouble(input1);
+            if (k <= min) {
+                min = k;
+            }
+            if (max <= k) {
+                max = k;
+            }
+            sum = k + sum;
+        }
+        avg = sum / n;
+        System.out.printf("Min = %.2f%nMax = %.2f%nSum = %.2f%nAvr = %.2f%n",min, max, sum, avg);
+    }
+}
